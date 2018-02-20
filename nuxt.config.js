@@ -16,10 +16,11 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
-        config.node = {
-          fs: 'empty'
-        }
       }
+      config.module.rules.push({
+        test: /\.js$/,
+        loader: 'ify-loader',
+      })
     }
   }
 }
